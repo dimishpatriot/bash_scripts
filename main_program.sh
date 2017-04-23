@@ -8,8 +8,6 @@ echo 'Установка/удаление/настройка основных п
 sudo add-apt-repository -y "deb http://download.videolan.org/pub/debian/stable/ /"
 # wine
 sudo apt-add-repository -y https://dl.winehq.org/wine-builds/ubuntu/
-# appgrid
-sudo add-apt-repository ppa:appgrid/stable
 # ubuntu tweak tool
 sudo add-apt-repository -y ppa:tualatrix/ppa
 # cherry tree
@@ -35,9 +33,7 @@ sudo apt-get install -y libdvdcss2
 # git - система контроля версий
 sudo apt-get install -y git
 # python 3.6 - новый питон с заменой ссылки python3
-sudo apt-get install -y python3.6
-sudo unlink /usr/bin/python3
-sudo ln -s /usr/bin/python3.6 python3
+sudo apt-get install -y python3.6 && sudo unlink /usr/bin/python3 && sudo ln -s /usr/bin/python3.6 /usr/bin/python3
 # wine - для запуска приложений windows из под Linux
 sudo dpkg --add-architecture i386
 wget https://dl.winehq.org/wine-builds/Release.key
@@ -50,8 +46,6 @@ sudo apt-get install -y virtualbox-5.1
 sudo apt-get install -y synaptic
 # synaptic - менеджер пакетов
 sudo apt-get install -y synaptic
-# appgrid - система установки программ (магазин)
-sudo apt-get install -y appgrid
 # sublime text 3
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 
@@ -108,7 +102,7 @@ sudo apt-get install -y vlc browser-plugin-vlc
 # восстановление зависимостей
 sudo apt install -y -f
 # удаление лишних пакетов, чистка кеша APT
-sudo apt autoremove
-sudo apt-get autoclean
+sudo apt autoremove -y
+sudo apt-get autoclean -y
 
 

@@ -16,13 +16,15 @@ sudo add-apt-repository -y ppa:giuspen/ppa
 sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc) partner"
 # telegram
 sudo add-apt-repository -y ppa:atareao/telegram
-# pycharm
-sudo add-apt-repository -y ppa:mystic-mirage/pycharm
+# ubuntu make
+sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
 # обновление репозиториев и системы
 sudo apt-get update
 sudo apt-get upgrade 
 
 # -----------------------------------------------------------------------------
+# ubuntu make - программа установки инструментов разработчиков
+sudo apt-get install -y ubuntu-make
 # preload - демон, собирающий информацию о наиболее часто запускаемых приложениях для ускорения их запуска
 sudo apt-get install -y preload
 # установка мультимедиа-кодеков сторонних производителей
@@ -33,7 +35,7 @@ sudo apt-get install -y libdvdcss2
 # git - система контроля версий
 sudo apt-get install -y git
 # python 3.6 - новый питон с заменой ссылки python3
-sudo apt-get install -y python3.6 && sudo unlink /usr/bin/python3 && sudo ln -s /usr/bin/python3.6 /usr/bin/python3
+sudo apt-get install -y python3.6
 # wine - для запуска приложений windows из под Linux
 sudo dpkg --add-architecture i386
 wget https://dl.winehq.org/wine-builds/Release.key
@@ -71,8 +73,8 @@ sudo apt-get install -y skype
 sudo apt-get install -y evolution
 # cherry tree - создание собственной базы данных древовидной структуры
 sudo apt-get install -y cherrytree
-# pycharm community - IDE для Python, бесплатная версия
-sudo apt-get install -y pycharm-community
+# pycharm community - IDE для Python, бесплатная версия из официального репозитория
+sudo umake ide pycharm
 # sublime text 3 - легкий редактор
 sudo apt-get install -y sublime-text-installer
 # установка программ для работы с различными типами архивов

@@ -25,24 +25,16 @@ sudo add-apt-repository -y ppa:stebbins/handbrake-releases
 sudo add-apt-repository -y ppa:openshot.developers/ppa
 # SublimeText3
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+# Choqok
+sudo add-apt-repository -y ppa:adilson/experimental
 # ----------------------------------------------------------------------------
 # обновление репозиториев и системы
 sudo apt-get update
 sudo apt-get upgrade 
 # ----------------------------------------------------------------------------
-# ubuntu make - программа установки инструментов разработчиков, нужна для установки PyCharm и прочих
-sudo apt-get install -y ubuntu-make
+# Система
 # preload - демон, собирающий информацию о наиболее часто запускаемых приложениях для ускорения их запуска
 sudo apt-get install -y preload
-# установка мультимедиа-кодеков сторонних производителей
-sudo apt-get install -y ubuntu-restricted-extras
-# установка кодека для чтения лецинзионных дисков
-wget -O - http://download.videolan.org/pub/debian/videolan-apt.asc | sudo apt-key add -
-sudo apt-get install -y libdvdcss2
-# git - система контроля версий
-sudo apt-get install -y git
-# python 3.6 - новый питон с заменой ссылки python3
-sudo apt-get install -y python3.6
 # wine - для запуска приложений windows из под Linux
 sudo dpkg --add-architecture i386
 wget https://dl.winehq.org/wine-builds/Release.key
@@ -57,7 +49,8 @@ sudo apt-get install -y synaptic
 sudo apt-get install -y synaptic
 # GParted - диспетчер дисков
 sudo apt-get install -y gparted
-# ----------------------------------------------------------------------------
+# UnetBootin - создание загрузочной флешки
+sudo apt install -y unetbootin
 # unity tweak tools - программа настройки окружения unity
 sudo apt-get install -y unity-tweak-tool
 # gnome tweak tools - программа настройки окружения gnome
@@ -65,39 +58,58 @@ sudo apt-get install -y gnome-tweak-tool
 # ubuntu tweak tools - программа настройки ubuntu
 sudo apt-get install -y ubuntu-tweak
 # ----------------------------------------------------------------------------
-# gimp - редактор изображений
-sudo apt-get install -y gimp
-# telegram - лучший мессенджер
-sudo apt-get install -y telegram
-# skype - не лучший, но бывает полезен. 
-# предварительно устанавливаются 32-битные библиотеки для корректного оформления
-sudo apt-get install -y sni-qt:i386 libdbusmenu-qt2:i386 libqt4-dbus:i386 libxss1:i386
-sudo apt-get install -y libgtk2.0-0:i386 gtk2-engines:i386 libgconf-2-4:i386
-sudo apt-get install -y skype
-# evolution - почта, контакты, календарь в одном флаконе
-sudo apt-get install -y evolution
+# Разработка
+# ubuntu make - программа установки инструментов разработчиков, нужна для установки PyCharm и прочих
+sudo apt-get install -y ubuntu-make
+# git - система контроля версий
+sudo apt-get install -y git
+# python 3.6 - новый питон
+sudo apt-get install -y python3.6
 # cherry tree - создание собственной базы данных древовидной структуры
 sudo apt-get install -y cherrytree
 # pycharm community - IDE для Python, бесплатная версия из официального репозитория
 sudo umake ide pycharm
 # sublime text 3 - легкий редактор
 sudo apt-get install -y sublime-text-installer
-# установка программ для работы с различными типами архивов
-sudo apt-get install -y p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
-# deluge - торрент-клиент
-sudo apt-get install -y deluge
-# handbrake - конвертер медиа-файлов
-sudo apt-get install -y handbrake-gtk
-# OpenShot - легкий видеоредактор
-sudo apt-get install -y openshot-qt
 # Double Commander - двухпанельный менеджер
 sudo apt install -y doublecmd-qt
 # TeamViewer - диспетчер удаленного рабочего стола
 wget http://download.teamviewer.com/download/teamviewer_i386.deb
 sudo gdebi teamviewer_linux.deb
+# FileZilla - FTP-клиент
+sudo apt-get install filezilla
+# установка программ для работы с различными типами архивов
+sudo apt-get install -y p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+# deluge - торрент-клиент
+sudo apt-get install -y deluge
 # ----------------------------------------------------------------------------
-# отображение имени пользователя в системном трее
-gsettings set com.canonical.indicator.session show-real-name-on-panel true
+# Медиа
+# установка мультимедиа-кодеков сторонних производителей
+sudo apt-get install -y ubuntu-restricted-extras
+# установка кодека для чтения лецинзионных дисков
+wget -O - http://download.videolan.org/pub/debian/videolan-apt.asc | sudo apt-key add -
+sudo apt-get install -y libdvdcss2
+# gimp - редактор изображений
+sudo apt-get install -y gimp
+# handbrake - конвертер медиа-файлов
+sudo apt-get install -y handbrake-gtk
+# OpenShot - легкий видеоредактор
+sudo apt-get install -y openshot-qt
+# -----------------------------------------------------------------------------
+# Общение
+# Choqok - twitter-клиент с широким функционалом
+sudo apt-get install -y choqok
+# telegram - лучший мессенджер
+sudo apt-get install -y telegram
+# skype - не лучший, но бывает полезен.
+# предварительно устанавливаются 32-битные библиотеки для корректного оформления
+sudo apt-get install -y sni-qt:i386 libdbusmenu-qt2:i386 libqt4-dbus:i386 libxss1:i386
+sudo apt-get install -y libgtk2.0-0:i386 gtk2-engines:i386 libgconf-2-4:i386
+sudo apt-get install -y skype
+# evolution - почта, контакты, календарь в одном флаконе
+sudo apt-get install -y evolution
+# ----------------------------------------------------------------------------
+# Прочее
 # удаление средства для чтения для слабовидящих
 sudo apt-get purge -y gnome-orca
 # удаление индикатора Amazon Из панели Unity

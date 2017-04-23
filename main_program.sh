@@ -1,8 +1,7 @@
 #!/bin/bash
 # установка основных программ 
 echo 'Установка/удаление/настройка основных программ Ubuntu'
-
-# ---------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # добавление сторонних репозиториев
 # кодеки
 sudo add-apt-repository -y "deb http://download.videolan.org/pub/debian/stable/ /"
@@ -18,12 +17,20 @@ sudo add-apt-repository -y "deb http://archive.canonical.com/ $(lsb_release -sc)
 sudo add-apt-repository -y ppa:atareao/telegram
 # ubuntu make
 sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
+# deluge
+sudo add-apt-repository -y ppa:deluge-team/ppa
+# handbrake
+sudo add-apt-repository -y ppa:stebbins/handbrake-releases
+# OpenShot
+sudo add-apt-repository -y ppa:openshot.developers/ppa
+# SublimeText3
+sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+# ----------------------------------------------------------------------------
 # обновление репозиториев и системы
 sudo apt-get update
 sudo apt-get upgrade 
-
-# -----------------------------------------------------------------------------
-# ubuntu make - программа установки инструментов разработчиков
+# ----------------------------------------------------------------------------
+# ubuntu make - программа установки инструментов разработчиков, нужна для установки PyCharm и прочих
 sudo apt-get install -y ubuntu-make
 # preload - демон, собирающий информацию о наиболее часто запускаемых приложениях для ускорения их запуска
 sudo apt-get install -y preload
@@ -48,9 +55,8 @@ sudo apt-get install -y virtualbox-5.1
 sudo apt-get install -y synaptic
 # synaptic - менеджер пакетов
 sudo apt-get install -y synaptic
-# sublime text 3
-sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-
+# GParted - диспетчер дисков
+sudo apt-get install -y gparted
 # ----------------------------------------------------------------------------
 # unity tweak tools - программа настройки окружения unity
 sudo apt-get install -y unity-tweak-tool
@@ -58,8 +64,7 @@ sudo apt-get install -y unity-tweak-tool
 sudo apt-get install -y gnome-tweak-tool
 # ubuntu tweak tools - программа настройки ubuntu
 sudo apt-get install -y ubuntu-tweak
-
-# ---------------------------------------------------------------------------
+# ----------------------------------------------------------------------------
 # gimp - редактор изображений
 sudo apt-get install -y gimp
 # telegram - лучший мессенджер
@@ -78,8 +83,18 @@ sudo umake ide pycharm
 # sublime text 3 - легкий редактор
 sudo apt-get install -y sublime-text-installer
 # установка программ для работы с различными типами архивов
-sudo apt-get install p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
-
+sudo apt-get install -y p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+# deluge - торрент-клиент
+sudo apt-get install -y deluge
+# handbrake - конвертер медиа-файлов
+sudo apt-get install -y handbrake-gtk
+# OpenShot - легкий видеоредактор
+sudo apt-get install -y openshot-qt
+# Double Commander - двухпанельный менеджер
+sudo apt install -y doublecmd-qt
+# TeamViewer - диспетчер удаленного рабочего стола
+wget http://download.teamviewer.com/download/teamviewer_i386.deb
+sudo gdebi teamviewer_linux.deb
 # ----------------------------------------------------------------------------
 # отображение имени пользователя в системном трее
 gsettings set com.canonical.indicator.session show-real-name-on-panel true
@@ -91,7 +106,6 @@ sudo apt-get purge -y unity-webapps-common
 sudo sed -i "s/enabled=1/enabled=0/g" '/etc/default/apport'
 # решение проблемы с кириллической кодировкой в gedit
 gsettings set org.gnome.gedit.preferences.encodings auto-detected "['UTF-8', 'WINDOWS-1251', 'CURRENT', 'ISO-8859-15', 'UTF-16']"
-
 # ----------------------------------------------------------------------------
 # удаление плеера rhythmbox
 sudo apt-get purge -y rhythmbox
@@ -99,12 +113,9 @@ sudo apt-get purge -y rhythmbox
 sudo apt-get purge -y totem
 # установка универсального плеера vlc и плагина для браузера
 sudo apt-get install -y vlc browser-plugin-vlc
-
 # ----------------------------------------------------------------------------
 # восстановление зависимостей
 sudo apt install -y -f
 # удаление лишних пакетов, чистка кеша APT
 sudo apt autoremove -y
 sudo apt-get autoclean -y
-
-

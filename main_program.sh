@@ -27,6 +27,8 @@ sudo add-apt-repository -y ppa:openshot.developers/ppa
 sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 # Choqok
 sudo add-apt-repository -y ppa:adilson/experimental
+# RemasterSys
+sudo apt-add-repository ppa:mutse-young/remastersys
 # ----------------------------------------------------------------------------
 # обновление репозиториев и системы
 sudo apt-get update
@@ -45,8 +47,6 @@ wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O - | sudo apt-key 
 sudo apt-get install -y virtualbox-5.1
 # synaptic - менеджер пакетов
 sudo apt-get install -y synaptic
-# synaptic - менеджер пакетов
-sudo apt-get install -y synaptic
 # GParted - диспетчер дисков
 sudo apt-get install -y gparted
 # UnetBootin - создание загрузочной флешки
@@ -57,6 +57,12 @@ sudo apt-get install -y unity-tweak-tool
 sudo apt-get install -y gnome-tweak-tool
 # ubuntu tweak tools - программа настройки ubuntu
 sudo apt-get install -y ubuntu-tweak
+# установка программ для работы с различными типами архивов
+sudo apt-get install -y p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
+# Deluge - торрент-клиент
+sudo apt-get install -y deluge
+# Ubuntu Customization Kit - система сборки
+sudo apt-get install -y uck
 # ----------------------------------------------------------------------------
 # Разработка
 # ubuntu make - программа установки инструментов разработчиков, нужна для установки PyCharm и прочих
@@ -77,11 +83,11 @@ sudo apt install -y doublecmd-qt
 wget http://download.teamviewer.com/download/teamviewer_i386.deb
 sudo gdebi teamviewer_linux.deb
 # FileZilla - FTP-клиент
-sudo apt-get install filezilla
-# установка программ для работы с различными типами архивов
-sudo apt-get install -y p7zip-rar p7zip-full unace unrar zip unzip sharutils rar uudeview mpack arj cabextract file-roller
-# deluge - торрент-клиент
-sudo apt-get install -y deluge
+sudo apt-get install -y filezilla
+# packaging-dev - инструментарий для сборки пакетов
+sudo apt-get install -y packaging-dev
+# CheckInstall - утилита, позволяющая создавать бинарные пакеты для Linux из исходного кода приложения
+sudo apt-get install -y checkinstall
 # ----------------------------------------------------------------------------
 # Медиа
 # установка мультимедиа-кодеков сторонних производителей
